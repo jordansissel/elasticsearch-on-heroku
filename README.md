@@ -10,9 +10,12 @@ This repo tracks any hacks and stuff necessary to make elasticsearch deployable 
 
 * Persistent storage - Heroku currently doesn't offer any persistent storage,
   to my knowledge, so when a dyno goes away (every day?), you'll lose data.
-* Authentication - elasticsearch's REST api is unauthenticated. Might be able
-  to hack something in if I can get access to the Jetty servlet stuff used
-  internal to elasticsearch.
+* Authentication - elasticsearch's REST api is unauthenticated, which is a problem
+  on heroku because everything is publicly accessible. Might be able to hack
+  something in if I can get access to the Jetty servlet stuff used internal to
+  elasticsearch. Long term, adding support into ElasticSearch for some
+  kind of pluggable auth might make sense, and it could be useful for both
+  HTTP and Transport protocol.s
 * Clustering - Because heroku only provides one port per process, and
   elasticsearch serves two protocols, one on each of two ports, it is
   impossible right now to serve both HTTP and Node Transport protocols through
