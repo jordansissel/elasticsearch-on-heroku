@@ -1,4 +1,4 @@
-import org.elasticsearch.node;
+import org.elasticsearch.node.NodeBuilder;
 
 public class ElasticSearch {
   public static void main(String[] args) {
@@ -7,7 +7,11 @@ public class ElasticSearch {
     nb.node();
 
     while (true) {
-      sleep(60);
+      try {
+        Thread.currentThread().sleep(60000);
+      } catch (Exception e) {
+        /* ignore */
+      }
     }
   }
 }
