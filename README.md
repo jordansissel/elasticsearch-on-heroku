@@ -9,7 +9,7 @@ This repo tracks any hacks and stuff necessary to make elasticsearch deployable 
 ## Unsolved problems
 
 * Persistent storage - Heroku currently doesn't offer any persistent storage,
-  to my knowledge, so when a dyno goes away (every day?), you'll lose data.
+  to my knowledge, so when a dyno goes away, you'll lose data.
 * Authentication - elasticsearch's REST api is unauthenticated, which is a problem
   on heroku because everything is publicly accessible. Might be able to hack
   something in if I can get access to the Jetty servlet stuff used internal to
