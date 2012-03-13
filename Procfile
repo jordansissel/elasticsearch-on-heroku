@@ -1,1 +1,1 @@
-web: env ES_JAVA_OPTS=-Des.http.port=$PORT java -cp target/classes:target/dependency/* ElasticSearch
+web: mvn exec:java -Dexec.mainClass=ElasticSearch -Des.http.port=$PORT
