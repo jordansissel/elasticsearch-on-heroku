@@ -1,0 +1,3 @@
+*.class
+.*.sw?
+target
